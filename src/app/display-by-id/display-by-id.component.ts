@@ -11,13 +11,16 @@ import {ActivatedRoute, Router} from "@angular/router";
 export class DisplayByIdComponent implements OnInit {
   id:number;
   customer: Customer = new Customer();
-  constructor(private customerService: CustomerService, private route: ActivatedRoute, private router: Router) { }
+  constructor(private customerService: CustomerService, private route: ActivatedRoute, private router: Router) { 
+    alert("constructor called...")
+  }
 
   ngOnInit(): void {
     this.id = this.route.snapshot.params['id'];
-    alert(this.id)
+    alert(this.id+" inside ngonint ")
     this.customerService.getCustomerById(this.id).subscribe(data=>{
         this.customer=data;
+        alert(this.customer.id+" "+this.customer.email)
       },
       error => console.log(error)
     );

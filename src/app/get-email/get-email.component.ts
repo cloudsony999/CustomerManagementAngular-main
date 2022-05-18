@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {ActivatedRoute, Router} from "@angular/router";
-import {Customer} from "../customer";
-import {CustomerService} from "../customer.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-get-email',
@@ -15,6 +13,6 @@ export class GetEmailComponent implements OnInit {
   ngOnInit(): void {
   }
   onSubmit(){
-    this.router.navigate(['displayByID',this.email]);
+    this.router.navigate(['d',this.email]);
   }
 }

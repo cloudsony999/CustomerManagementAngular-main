@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {CustomerService} from "../customer.service";
-import {ActivatedRoute} from "@angular/router";
+
 import {Customer} from "../customer";
+import {ActivatedRoute, Router} from "@angular/router";
 
 @Component({
   selector: 'app-display-by-email',
@@ -11,13 +12,16 @@ import {Customer} from "../customer";
 export class DisplayByEmailComponent implements OnInit {
   email: string;
   customer: Customer = new Customer();
-  constructor(private customerService: CustomerService, private route: ActivatedRoute) { }
+  constructor(private customerService: CustomerService, private route: ActivatedRoute, private router: Router) {
+    alert("constructor called for email...")
+   }
 
   ngOnInit(): void {
     this.email = this.route.snapshot.params['email'];
-    alert(this.email)
+    alert("inside ngonint"+this.email)
     this.customerService.getCustomerByEmail(this.email).subscribe(data=>{
         this.customer=data;
+        alert(this.customer.id+" "+this.customer.email+" for email")
       },
       error => console.log(error)
     );

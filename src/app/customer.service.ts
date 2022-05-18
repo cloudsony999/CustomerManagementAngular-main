@@ -7,7 +7,7 @@ import { Customer } from "./customer";
   providedIn: 'root'
 })
 export class CustomerService {
-  x: string='gg@gmail.com';
+ 
   private getAllCustomersURL = "http://localhost:9999/api/v1/getAllCustomers";
   private createCustomerURL = "http://localhost:9999/api/v1/createCustomer";
   private getCustomerbyIdURL = "http://localhost:9999/api/v1/getCustomer";
@@ -36,9 +36,9 @@ export class CustomerService {
     alert('hi')
     return this.HttpClient.get<Customer>(`${this.getCustomerbyIdURL}/${id}`);
   }
-  getCustomerByEmail(_email: string): Observable<Customer> {
-    alert('hiiiii'+_email);
+  getCustomerByEmail(email: string): Observable<Customer> {
+    alert('.....hiiiii from service layer......'+ email);
     
-    return this.HttpClient.get<Customer>(`${this.getCustomerbyEmailURL}/${this.x}`);
+    return this.HttpClient.get<Customer>(`${this.getCustomerbyEmailURL}/${email}`);
   }
 }
