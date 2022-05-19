@@ -13,6 +13,6 @@ export class GetEmailComponent implements OnInit {
   ngOnInit(): void {
   }
   onSubmit(){
-    this.router.navigate(['d',this.email]);
+    this.router.navigate(['jumptoemail',this.email]);
   }
 }

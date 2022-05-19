@@ -17,12 +17,15 @@
 
     <div class="form-group">
       <label>Last Name: </label>
-      <input type="text" class="form-control" id="lastName" [(ngModel)]="customer.lastName" name="lastName">
+      <input formControlName="lname" type="text" class="form-control" id="lastName" [(ngModel)]="customer.lastName" name="lastName">
+      <div *ngIf="f['lname'].touched && f['lname'].invalid" class="alert alert-danger">
+        <div *ngIf="f['lname'].errors && f['lname'].errors['required']">!!!LAST  NAME IS MANDATORY!!!</div>
+        </div>
     </div>
 
     <div class="form-group">
       <label>Mobile: </label>
-      <input type="number" class="form-control" id="mobile" [(ngModel)]="customer.mobile" name="mobile">
+      <input type="number" formControlName="mobile" class="form-control" id="mobile" [(ngModel)]="customer.mobile" name="mobile">
     </div>
 
     <div class="form-group">

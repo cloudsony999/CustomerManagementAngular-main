@@ -21,7 +21,7 @@ const routes: Routes = [
   {path: 'getEmail', component: GetEmailComponent},
   {path: 'getID', component: GetIdFindComponent},
   {path: 'displayByID/:id', component: DisplayByIdComponent},
-  {path: 'd/:email', component: DisplayByEmailComponent},
+  {path: 'jumptoemail/:email', component: DisplayByEmailComponent},
   {path: '', redirectTo: 'homepage', pathMatch: 'full'}
 ];
 

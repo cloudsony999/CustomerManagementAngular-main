@@ -18,8 +18,10 @@ export class CreateCustomerComponent implements OnInit {
   form = new FormGroup({
     name: new FormControl('', [Validators.required, Validators.minLength(3)]),
     email: new FormControl('', [Validators.required, Validators.email]),
-    address: new FormControl('', [Validators.required,Validators.maxLength(12)])
-  });
+    address: new FormControl('', [Validators.required,Validators.maxLength(12)]),
+    lname: new FormControl('',[Validators.required]),
+    mobile:new FormControl('')
+     });
   
   get f(){
     return this.form.controls;
