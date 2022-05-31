@@ -22,7 +22,7 @@ const routes: Routes = [
   {path: 'getID', component: GetIdFindComponent},
   {path: 'displayByID/:id', component: DisplayByIdComponent},
   {path: 'jumptoemail/:email', component: DisplayByEmailComponent},
-  {path: '', redirectTo: 'homepage', pathMatch: 'full'}
+  {path: '**', redirectTo: 'customers', pathMatch: 'full'}
 ];
 
 @NgModule({
